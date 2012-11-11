@@ -1,37 +1,18 @@
 #pragma strict
 
-private var doorIsOpen : boolean;
-private var doorTimer : float = 0.0f;
 private var currentDoor : GameObject;
-var doorOpenTime : float = 3.0f;
-var doorOpenSound : AudioClip;
-var doorShutSound : AudioClip;
 
 function Start () {
 
 }
 
 function Update () {
-	if(doorIsOpen) {
-		doorTimer += Time.deltaTime;
-		
-		if(doorTimer >= doorOpenTime) {
-			MoveDoor(currentDoor, false, 'doorshut', doorShutSound);
-			doorTimer = 0;
+	var hit : RaycastHit;
+	
+	if(Physics.Raycast(transform.position, transform.forward, hit, 3)) {
+		if(hit.collider.gameObject.tag == 'PlayerDoor') {
+			currentDoor = hit.collider.gameObject;
+			currentDoor.SendMessage('CheckDoor');
 		}
 	}
-}
-
-function OnControllerColliderHit(hit : ControllerColliderHit) {
-	if((hit.gameObject.tag == 'PlayerDoor') && !doorIsOpen) {
-		currentDoor = hit.gameObject;
-		MoveDoor(currentDoor, true, 'dooropen', doorOpenSound);
-	}
-}
-
-function MoveDoor(door : GameObject, open : boolean, doorAnimation : String, doorSound : AudioClip) {
-	doorIsOpen = open;
-	
-	door.audio.PlayOneShot(doorSound);
-	door.transform.parent.animation.Play(doorAnimation);
 }
