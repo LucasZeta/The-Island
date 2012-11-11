@@ -44,6 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DoorManager.js" />
      <Compile Include="Assets\Scripts\PlayerCollisions.js" />
      <Compile Include="Assets\Scripts\Shooter.js" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
