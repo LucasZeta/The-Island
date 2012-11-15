@@ -1,7 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TriggerZone.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PowerCell.js">
     <Files>
+      <File FileName="Assets\Scripts\PowerCell.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\TriggerZone.js" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\FPSInputController.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Shooter.js" Line="1" Column="1" />
