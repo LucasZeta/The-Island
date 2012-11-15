@@ -11,5 +11,8 @@ function Update () {
 }
 
 function OnTriggerEnter(collider : Collider) {
-	
+	if(collider.gameObject.tag == 'Player') {
+		collider.gameObject.SendMessage('CellPickup');
+		Destroy(gameObject);
+	}
 }
