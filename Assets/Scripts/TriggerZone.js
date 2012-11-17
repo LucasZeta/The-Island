@@ -1,9 +1,17 @@
 #pragma strict
 
+var lockedSound : AudioClip;
+
 function OnTriggerEnter(collider : Collider) {
 	if(collider.gameObject.tag == 'Player') {
+		var door : Transform = transform.FindChild('door');
+		
 		if(Inventory.GetCharge() == 4) {
-			transform.FindChild('door').SendMessage('CheckDoor');
+			door.SendMessage('CheckDoor');
+		}
+		else {
+			door.audio.PlayOneShot(lockedSound);
+			collider.gameObject.SendMessage('enableHUD');
 		}
 	}
 }
