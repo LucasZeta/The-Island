@@ -9,17 +9,16 @@ static function GetCharge() {
 	return charge;
 }
 
-function Start () {
-
-}
-
-function Update () {
-
-}
-
 function CellPickup() {
 	AudioSource.PlayClipAtPoint(collectSound, transform.position);
 	charge++;
 	
+	enableHUD();
 	hudChargeGUI.texture = hudCharge[charge];
+}
+
+function enableHUD() {
+	if(! hudChargeGUI.enabled) {
+		hudChargeGUI.enabled = true;
+	}
 }
