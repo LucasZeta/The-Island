@@ -13,3 +13,5 @@ function Update () {
 		newProjectile.velocity = transform.forward * throwSpeed;
 	}
 }
+
+@script RequireComponent(AudioSource)
