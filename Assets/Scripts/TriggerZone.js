@@ -8,6 +8,10 @@ function OnTriggerEnter(collider : Collider) {
 		
 		if(Inventory.GetCharge() == 4) {
 			door.SendMessage('CheckDoor');
+			
+			if(GameObject.Find('PowerGUI')) {
+				Destroy(GameObject.Find('PowerGUI'));
+			}
 		}
 		else {
 			door.audio.PlayOneShot(lockedSound);
