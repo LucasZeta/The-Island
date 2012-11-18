@@ -2,6 +2,7 @@
 
 var lockedSound : AudioClip;
 var doorLight : Light;
+var textHints : GUIText;
 
 function OnTriggerEnter(collider : Collider) {
 	if(collider.gameObject.tag == 'Player') {
@@ -18,6 +19,7 @@ function OnTriggerEnter(collider : Collider) {
 		else {
 			door.audio.PlayOneShot(lockedSound);
 			collider.gameObject.SendMessage('enableHUD');
+			textHints.SendMessage('ShowHint', 'This door seems locked... maybe that generator needs power...');
 		}
 	}
 }
