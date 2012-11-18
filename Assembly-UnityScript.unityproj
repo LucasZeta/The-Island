@@ -44,6 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CoconutThrower.js" />
      <Compile Include="Assets\Scripts\DoorManager.js" />
      <Compile Include="Assets\Scripts\Inventory.js" />
      <Compile Include="Assets\Scripts\PowerCell.js" />
