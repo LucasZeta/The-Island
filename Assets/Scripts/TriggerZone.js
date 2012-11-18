@@ -1,6 +1,7 @@
 #pragma strict
 
 var lockedSound : AudioClip;
+var doorLight : Light;
 
 function OnTriggerEnter(collider : Collider) {
 	if(collider.gameObject.tag == 'Player') {
@@ -11,6 +12,7 @@ function OnTriggerEnter(collider : Collider) {
 			
 			if(GameObject.Find('PowerGUI')) {
 				Destroy(GameObject.Find('PowerGUI'));
+				doorLight.color = Color.green;
 			}
 		}
 		else {
