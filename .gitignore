@@ -1,6 +1,5 @@
 # Unity3D .gitignore file.
 
-.gitignore
 *.csproj
 *.pidb
 *.sln
