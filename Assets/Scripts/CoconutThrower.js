@@ -11,7 +11,5 @@ function Update () {
 		var newProjectile : Rigidbody = Instantiate(projectile, transform.position, transform.rotation);
 		newProjectile.name = 'coconut';
 		newProjectile.velocity = transform.forward * throwSpeed;
-		
-		Physics.IgnoreCollision(transform.root.collider, newProjectile.collider, true);
 	}
 }
