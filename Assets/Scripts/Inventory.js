@@ -1,6 +1,7 @@
 #pragma strict
 
 static private var charge : int = 0;
+private var numPowerCells : int = 4;
 
 var collectSound : AudioClip;
 var hudCharge : Texture2D[];
@@ -19,6 +20,10 @@ function CellPickup() {
 	enableHUD();
 	hudChargeGUI.texture = hudCharge[charge];
 	generator.material.mainTexture = generatorCharge[charge];
+	
+	if(charge == numPowerCells) {
+		GameObject.FindGameObjectWithTag('OutPost').SendMessage('UnlockDoor');
+	}
 }
 
 function enableHUD() {

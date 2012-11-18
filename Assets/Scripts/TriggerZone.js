@@ -1,5 +1,7 @@
 #pragma strict
 
+private var doorLocked : boolean = true;
+
 var lockedSound : AudioClip;
 var doorLight : Light;
 var textHints : GUIText;
@@ -9,12 +11,15 @@ function OnTriggerEnter(collider : Collider) {
 		var door : Transform = transform.FindChild('door');
 		var charge : int = Inventory.GetCharge();
 		
-		if(charge == 4) {
+		if((charge == 4) && doorLocked) {
+			UnlockDoor();
+		}
+		
+		if(! doorLocked) {
 			door.SendMessage('CheckDoor');
 			
 			if(GameObject.Find('PowerGUI')) {
 				Destroy(GameObject.Find('PowerGUI'));
-				doorLight.color = Color.green;
 			}
 		}
 		else {
@@ -29,4 +34,10 @@ function OnTriggerEnter(collider : Collider) {
 			}
 		}
 	}
+}
+
+function UnlockDoor() {
+	doorLocked = false;
+	
+	doorLight.color = Color.green;
 }
