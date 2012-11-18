@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\Inventory.js" />
      <Compile Include="Assets\Scripts\PowerCell.js" />
      <Compile Include="Assets\Scripts\Shooter.js" />
+     <Compile Include="Assets\Scripts\TextHints.js" />
      <Compile Include="Assets\Scripts\TriggerZone.js" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
