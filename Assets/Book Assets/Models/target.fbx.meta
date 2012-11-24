@@ -30,12 +30,27 @@ ModelImporter:
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
-    clipAnimations: []
+    clipAnimations:
+    - name: idle
+      firstFrame: 1
+      lastFrame: 2
+      wrapMode: 0
+      loop: 0
+    - name: down
+      firstFrame: 3
+      lastFrame: 13
+      wrapMode: 0
+      loop: 0
+    - name: up
+      firstFrame: 14
+      lastFrame: 35
+      wrapMode: 0
+      loop: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: .100000001
+    globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -73,6 +88,9 @@ ModelImporter:
       data:
         first: 33
         second: a05a3200
+      data:
+        first: 64
+        second: 06a86100
     target_base:
       data:
         first: 1
@@ -86,6 +104,9 @@ ModelImporter:
       data:
         first: 33
         second: a25a3200
+      data:
+        first: 64
+        second: 08a86100
     target_pivot:
       data:
         first: 1
@@ -99,6 +120,9 @@ ModelImporter:
       data:
         first: 33
         second: a45a3200
+      data:
+        first: 64
+        second: 00a86100
     target_support_1:
       data:
         first: 1
@@ -112,6 +136,9 @@ ModelImporter:
       data:
         first: 33
         second: a65a3200
+      data:
+        first: 64
+        second: 04a86100
     target_support_2:
       data:
         first: 1
@@ -125,3 +152,6 @@ ModelImporter:
       data:
         first: 33
         second: a85a3200
+      data:
+        first: 64
+        second: 02a86100
