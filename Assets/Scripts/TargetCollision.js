@@ -27,3 +27,5 @@ function targetHit() {
 	targetRoot.Play('up');
 	beenHit = false;
 }
+
+@script RequireComponent(AudioSource)
