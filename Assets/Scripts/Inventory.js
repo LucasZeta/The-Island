@@ -6,6 +6,7 @@ private var numPowerCells : int = 4;
 var collectSound : AudioClip;
 var hudCharge : Texture2D[];
 var hudChargeGUI : GUITexture;
+var matchGUI : GUITexture;
 var generatorCharge : Texture2D[];
 var generator : Renderer;
 
@@ -24,6 +25,12 @@ function CellPickup() {
 	if(charge == numPowerCells) {
 		GameObject.FindGameObjectWithTag('OutPost').SendMessage('UnlockDoor');
 	}
+}
+
+function MatchboxPickup() {
+	AudioSource.PlayClipAtPoint(collectSound, transform.position);
+	
+	matchGUI.enabled = true;
 }
 
 function enableHUD() {
