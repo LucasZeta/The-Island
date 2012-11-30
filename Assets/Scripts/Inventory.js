@@ -38,3 +38,13 @@ function enableHUD() {
 		hudChargeGUI.enabled = true;
 	}
 }
+
+function OnControllerColliderHit(collider : ControllerColliderHit) {
+	if(collider.gameObject.name == 'campfire') {
+		LightFire(collider.gameObject);
+	}
+}
+
+function LightFire(inflamable : GameObject) {
+	inflamable.GetComponentInChildren(ParticleSystem).Play();
+}
