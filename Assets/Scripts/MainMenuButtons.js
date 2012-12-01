@@ -4,6 +4,7 @@ var beepSound : AudioClip;
 var levelToLoad : String;
 var normalTexture : Texture2D;
 var hoverTexture : Texture2D;
+var quitButton : boolean = false;
 
 function OnMouseEnter() {
 	guiTexture.texture = hoverTexture;
@@ -14,10 +15,14 @@ function OnMouseExit() {
 }
 
 function OnMouseUp() {
-	if(levelToLoad != '') {
-		audio.PlayOneShot(beepSound);
-		
-		yield new WaitForSeconds(0.35f);
+	audio.PlayOneShot(beepSound);
+	
+	yield new WaitForSeconds(0.35f);
+	
+	if(quitButton) {
+		Application.Quit();
+	}
+	else if(levelToLoad != '') {
 		Application.LoadLevel(levelToLoad);
 	}
 }
