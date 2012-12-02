@@ -53,7 +53,7 @@ function OnControllerColliderHit(collider : ControllerColliderHit) {
 			}
 		}
 		else {
-			textHints.SendMessage('ShowHint', 'Looks like I could use this to sign for help\nIf only I could light it...');
+			textHints.SendMessage('ShowHint', 'Looks like I could use this to signal for help\nIf only I could light it...');
 		}
 	}
 }
