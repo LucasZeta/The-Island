@@ -11,8 +11,8 @@ var hudChargeGUI : GUITexture;
 var matchGUI : GUITexture;
 var generatorCharge : Texture2D[];
 var generator : Renderer;
-
 var textHints : GUIText;
+var winObject : GameObject;
 
 static function GetCharge() {
 	return charge;
@@ -61,4 +61,7 @@ function OnControllerColliderHit(collider : ControllerColliderHit) {
 function LightFire(inflamable : GameObject) {
 	inflamable.GetComponentInChildren(ParticleSystem).Play();
 	inflamable.audio.Play();
+	
+	yield new WaitForSeconds(3.0);
+	winObject.SendMessage('GameOver');
 }
