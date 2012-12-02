@@ -24,18 +24,31 @@ function OnGUI() {
 	GUI.BeginGroup(menuAreaNormalized);
 	
 	if(GUI.Button(Rect(playButton), 'Play')) {
-		audio.PlayOneShot(beepSound);
+		ButtonAction('Island');
 	}
 	
 	if(GUI.Button(Rect(instructionsButton), 'Instructions')) {
-		audio.PlayOneShot(beepSound);
+		ButtonAction('Instructions');
 	}
 	
 	if(GUI.Button(Rect(quitButton), 'Quit')) {
-		audio.PlayOneShot(beepSound);
+		ButtonAction('quit');
 	}
 	
 	GUI.EndGroup();
+}
+
+function ButtonAction(levelName : String) {
+	audio.PlayOneShot(beepSound);
+	
+	yield new WaitForSeconds(0.35);
+	
+	if(levelName != 'quit') {
+		Application.LoadLevel(levelName);
+	}
+	else {
+		Application.Quit();
+	}
 }
 
 @script RequireComponent(AudioSource)
