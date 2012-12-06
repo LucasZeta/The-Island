@@ -7,7 +7,9 @@ var winClip : AudioClip;
 function GameOver() {
 	AudioSource.PlayClipAtPoint(winClip, transform.position);
 	
-	Instantiate(winSequence);
+	var winSequenceObject : GameObject = Instantiate(winSequence);
 	yield new WaitForSeconds(8.0);
+	
+	Destroy(winSequenceObject);
 	Instantiate(fader);
 }
