@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Shooter.js" />
      <Compile Include="Assets\Scripts\TargetCollision.js" />
      <Compile Include="Assets\Scripts\TextHints.js" />
+     <Compile Include="Assets\Scripts\TextureAutoScaler.js" />
      <Compile Include="Assets\Scripts\ThrowTrigger.js" />
      <Compile Include="Assets\Scripts\TriggerZone.js" />
      <Compile Include="Assets\Scripts\WaterCollision.js" />
