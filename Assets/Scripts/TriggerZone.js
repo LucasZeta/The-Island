@@ -39,5 +39,5 @@ function OnTriggerEnter(collider : Collider) {
 function UnlockDoor() {
 	doorLocked = false;
 	
-	doorLight.color = Color.green;
+	doorLight.enabled = true;
 }
