@@ -46,8 +46,10 @@ function AddMainMenu() {
 		ButtonAction('instructions', 'page');
 	}
 	
-	if(GUI.Button(Rect(quitButton), 'Quit')) {
-		ButtonAction('quit', 'level');
+	if(! Application.isWebPlayer) {
+		if(GUI.Button(Rect(quitButton), 'Quit')) {
+			ButtonAction('quit', 'level');
+		}
 	}
 }
 
